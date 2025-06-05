@@ -9,6 +9,8 @@ import SwiftUI
 
 struct FrameworkGridView: View {
     
+    @StateObject var viewModel = FrameworkGridViewModel()
+    
     let columns: [GridItem] = [GridItem(.flexible ()), GridItem(.flexible ()), GridItem(.flexible ())]
     
     
@@ -18,11 +20,21 @@ struct FrameworkGridView: View {
                 LazyVGrid(columns: columns) {
                     ForEach(MockData.frameworks){ framework in //"framework in" is the name of the thing we're iterating over. just a name!
                         FrameworkTitleView(f2: framework)
+                            .onTapGesture{ //whenever we click this framework
+                                viewModel.selectedFramework = framework
+                            }
                     }
 
                 }
             }
             .navigationTitle("Frameworks")
+            .sheet(isPresented: $viewModel.isShowingDetailView){
+                //basically what we're saying is show this sheet
+                //whenever isShowingDetailView CHANGES.
+                //so what view do we wanna show?
+                //we wanna show Frameworkdetailview
+                FrameworkDetailView(framework: viewModel.selectedFramework ?? MockData.sampleFramework, isShowingDetailView: $viewModel.isShowingDetailView) //if viewModel.selectedFramework is NIL, then we pass in MockData.sampleFramework, but i think for the future we should make an "oops we can't open that" type page.
+            }
         }
 
         //Text("Hello world")
