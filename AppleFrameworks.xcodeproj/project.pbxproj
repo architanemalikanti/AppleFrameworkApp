@@ -6,7 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		899B43542DF231E8009CE043 /* AFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899B43532DF231E8009CE043 /* AFButton.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		899B43532DF231E8009CE043 /* AFButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFButton.swift; sourceTree = "<group>"; };
 		89C9A2B82DF10EBB003D5F88 /* AppleFrameworks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleFrameworks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -32,6 +37,7 @@
 		89C9A2AF2DF10EBB003D5F88 = {
 			isa = PBXGroup;
 			children = (
+				899B43532DF231E8009CE043 /* AFButton.swift */,
 				89C9A2BA2DF10EBB003D5F88 /* AppleFrameworks */,
 				89C9A2B92DF10EBB003D5F88 /* Products */,
 			);
@@ -119,6 +125,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				899B43542DF231E8009CE043 /* AFButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
